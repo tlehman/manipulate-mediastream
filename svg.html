@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVGs on MediaStreams</title>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+        <div style="float: left">
+            <div style="position:absolute; float:left; width:300px; min-height:225px; background-color: rgb(0,0,0,0); z-index:300000;">
+                <svg width="300px" height="225px" id="svg1">
+                    <line x1="87" y1="225" x2="87" y2="80" stroke="blue" stroke-width="3px"></line>
+                    <line x1="212" y1="225" x2="212" y2="80" stroke="blue" stroke-width="3px"></line>
+                </svg>
+            </div>
+            <div>
+                <video id="video1" autoplay width="300" height="225"></video>
+            </div>
+        </div>
+        
+    </body>
+</html>

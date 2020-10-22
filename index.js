@@ -13,15 +13,15 @@ function drawToCanvas() {
     const pixelData = inputCtx.getImageData(0, 0, width, height);
     const arr = pixelData.data;
 
-    // Iterate through every pixel
+    // Iterate through every pixel, calculate x,y coordinates
     for (let i = 0; i < arr.length; i += 4) {
         const x = i/4 % (width);
         const y = i / (width * 4);
-        if(x > 140 && x < 160 || y > 110 && y < 130) {
+        if(((x > 85 && x < 90) || (x > 210 && x < 215)) && (y > 80)) {
             arr[i + 0] = 0;
-            arr[i + 1] = 0;
+            arr[i + 1] = 255;
             arr[i + 2] = 0;
-            arr[i + 3] = 0;
+            arr[i + 3] = 255;
         }
     }
 
@@ -42,6 +42,11 @@ async function attachUserMediaToVideo() {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video1 = document.getElementById("video1");
     video1.srcObject = stream;
+    return stream;
 }
 
 attachUserMediaToVideo();
+
+function drawToSvg() {
+
+}
